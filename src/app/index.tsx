@@ -1,14 +1,36 @@
-import { Button, ButtonText } from "@/components/ui/button";
+import { Button, ButtonIcon, ButtonText } from "@/components/ui/button";
 import { Input, InputField } from "@/components/ui/input";
-import { StyleSheet, Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
+
+// Create custom icon components for Apple and Google
+const AppleIcon = props => {
+  return (
+    <Image
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      source={require("C:/Users/carte/Desktop/dopamine-frontend/Assets/Screenshot 2025-02-23 025857.png")}
+      style={[{ width: 20, height: 20, resizeMode: "contain" }, props.style]}
+    />
+  );
+};
+
+const GoogleIcon = props => {
+  return (
+    <Image
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      source={require("C:/Users/carte/Desktop/dopamine-frontend/Assets/Screenshot 2025-02-23 030310.png")}
+      className="size-5 object-contain"
+      style={[{ width: 20, height: 20, resizeMode: "contain" }, props.style]}
+    />
+  );
+};
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.headerText}>Login</Text>
+    <View className="flex-1 items-center justify-center">
+      <Text className="mb-[50px] text-[32px]">Login</Text>
 
       <Input
-        style={styles.emailInput}
+        className="mb-[20px] h-[40px] w-[300px] rounded-[20px] border border-gray-300 px-[10px]"
         variant="outline"
         size="lg"
         isDisabled={false}
@@ -19,7 +41,7 @@ export default function Index() {
       </Input>
 
       <Input
-        style={styles.passwordInput}
+        className="mb-[50px] h-[40px] w-[300px] rounded-[20px] border border-gray-300 px-[10px]"
         variant="outline"
         size="lg"
         isDisabled={false}
@@ -30,69 +52,54 @@ export default function Index() {
       </Input>
 
       <Button
-        style={styles.loginButton}
+        className="mb-[2px] h-[40px] w-[170px] rounded-[20px]"
         size="lg"
         variant="solid"
         action="primary"
       >
-        <ButtonText style={styles.buttonText}>login</ButtonText>
+        <ButtonText className="text-center text-[20px]">login</ButtonText>
       </Button>
 
       <Button size="md" variant="link" action="secondary">
         <ButtonText>Forgot Password?</ButtonText>
       </Button>
 
-      <View>
-        <View style={styles.divider} />
-        <Text>Text Here!!</Text>
-        <View style={styles.divider} />
+      <View className="flex flex-row">
+        <View className="mb-[7px] w-[250px] border-b border-b-black" />
+        <Text className="mt-[150px]">Other Sign In</Text>
+        <View className="mb-[7px] w-[250px] border-b border-b-black" />
+      </View>
+
+      <View className="mt-[20px] flex flex-row items-center justify-center gap-6 space-x-5">
+        <Button
+          className="mb-[50px] h-[40px] w-[170px] flex-row items-center justify-center rounded-[20px]"
+          size="lg"
+          variant="solid"
+          action="primary"
+        >
+          <ButtonText className="text-center text-[20px]">Apple</ButtonText>
+          <ButtonIcon as={AppleIcon} className="mr-2" />
+        </Button>
+
+        <Button
+          className="mb-[50px] h-[40px] w-[170px] flex-row items-center justify-center rounded-[20px] bg-white"
+          size="lg"
+          variant="solid"
+          action="primary"
+        >
+          <ButtonText className="text-center text-[20px] text-black">
+            Google
+          </ButtonText>
+          <ButtonIcon as={GoogleIcon} className="mr-2" />
+        </Button>
+      </View>
+
+      <View className="flex flex-row items-center justify-center space-x-4">
+        <Text className="text-[16px]">Don't Have Account?</Text>
+        <Button size="md" variant="link" action="secondary">
+          <ButtonText className="text-blue-500">Sign Up</ButtonText>
+        </Button>
       </View>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  headerText: {
-    fontSize: 32,
-    marginBottom: 50,
-  },
-  emailInput: {
-    width: 300,
-    height: 40,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    marginBottom: 20,
-    borderRadius: 20,
-  },
-  passwordInput: {
-    width: 300,
-    height: 40,
-    borderColor: "#ccc",
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    marginBottom: 100,
-    borderRadius: 20,
-  },
-  loginButton: {
-    width: 170,
-    height: 40,
-    borderRadius: 20,
-    marginBottom: 2,
-  },
-  buttonText: {
-    fontSize: 20,
-    textAlign: "center",
-  },
-  divider: {
-    borderBottomColor: "black",
-    borderBottomWidth: 1,
-    width: 300,
-    marginVertical: 150,
-  },
-});
