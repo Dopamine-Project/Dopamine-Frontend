@@ -19,5 +19,12 @@
     "html": "html",
     "javascript": "javascript",
     "css": "css"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["tva\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
   }
 }

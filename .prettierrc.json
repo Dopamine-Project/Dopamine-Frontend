@@ -3,6 +3,10 @@
   "singleQuote": false,
   "trailingComma": "all",
   "arrowParens": "avoid",
-  "plugins": ["prettier-plugin-organize-imports"],
+  "plugins": [
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindFunctions": ["tva"],
   "endOfLine": "lf"
 }
