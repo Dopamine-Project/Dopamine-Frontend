@@ -2,22 +2,26 @@ import { Button, ButtonIcon, ButtonText } from "@/components/ui/button";
 import { Input, InputField } from "@/components/ui/input";
 import { Image, Text, View } from "react-native";
 
+interface IconProps {
+  style?: object;
+}
+
 // Create custom icon components for Apple and Google
-const AppleIcon = props => {
+const AppleIcon: React.FC<IconProps> = props => {
   return (
     <Image
       // eslint-disable-next-line @typescript-eslint/no-require-imports
-      source={require("C:/Users/carte/Desktop/dopamine-frontend/Assets/Screenshot 2025-02-23 025857.png")}
+      source={require("@/../assets/Screenshot 2025-02-23 025857.png")}
       style={[{ width: 20, height: 20, resizeMode: "contain" }, props.style]}
     />
   );
 };
 
-const GoogleIcon = props => {
+const GoogleIcon: React.FC<IconProps> = props => {
   return (
     <Image
       // eslint-disable-next-line @typescript-eslint/no-require-imports
-      source={require("C:/Users/carte/Desktop/dopamine-frontend/Assets/Screenshot 2025-02-23 030310.png")}
+      source={require("@/../assets/Screenshot 2025-02-23 030310.png")}
       className="size-5 object-contain"
       style={[{ width: 20, height: 20, resizeMode: "contain" }, props.style]}
     />

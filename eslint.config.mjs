@@ -34,4 +34,7 @@ export default tseslint.config(
     plugins: { prettier: eslintPluginPrettier },
     rules: eslintPluginPrettier.configs.recommended.rules,
   },
+  {
+    ignores: ["src/components/ui/*"],
+  },
 );
