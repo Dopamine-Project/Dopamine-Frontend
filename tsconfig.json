@@ -3,7 +3,12 @@
   "compilerOptions": {
     "strict": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "tailwind.config": [
+        "./tailwind.config.js"
+      ]
     },
     "jsx": "react-jsx"
   },
@@ -12,6 +17,8 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts",
-    "eslint.config.mjs"
+    "eslint.config.mjs",
+    "src/nativewind-env.d.ts",
+    "nativewind-env.d.ts"
   ]
 }
